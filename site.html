@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-освещение</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <div class="block_head">
+        Освещение v0.1
+    </div>
+    <div class="block_body">
+        <div>
+            <p>Идентификация устройства</p>
+            <p><input type="checkbox" name="auto"></p><p style="font-size: 14px;">Авто</p>
+        </div>
+        <div>
+            <p>Режим работы</p>
+            <p><input type="checkbox" name="regime"></p><p style="font-size: 14px;">Ежесуточно</p>
+        </div>
+        <div>
+            <p><input type="time" name="on_time"></p>
+            <p style="font-size: 14px;"> Время включения</p>
+        </div>
+        <div>
+            <p><input type="time" name="work_period"></p>
+            <p style="font-size: 14px;"> Продолжительность работы</p>
+        </div>
+        <div>
+            <p><input type="range" name="brightness" step="10" min="30" max="100" value="50"/></p>
+            <p><input type="number" name="brightness" step="10" min="30" max="100" value="50" style="width: 50px;"></p>
+            <p style="font-size: 14px;">Яркость (30-100%)</p>
+        </div>
+        <div style="justify-content: center;">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div style="flex-direction: column; font-size: 14px;">
+            <p>Демонстрационный режим работы</p>
+            <p>
+                <input type="radio" value="1" name="demo"/>100%, 30 c
+            </p>
+            <p>
+                <input type="radio" value="2" name="demo"/>100%, 30 c; 50%, 30 c; 100%, 45 c
+            </p>
+            <p>
+                <input type="radio" value="3" name="demo"/>100%, 20 c; 70%, 30 c
+            </p>
+            <p>
+                <input type="radio" value="4" name="demo"/>100%, 20 c; 50%, 15 c; 20% 15 c; 100%, 15c
+            </p>
+            <p>
+                <input type="radio" value="5" name="demo"/>100%, 30 c; 50%, 15 c
+            </p>
+        </div>
+        <div style="justify-content: center;">
+            <label class="switch" >
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
