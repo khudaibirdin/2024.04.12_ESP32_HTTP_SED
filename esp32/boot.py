@@ -17,6 +17,9 @@ counter_led = 0
 #LED = Pin(15, Pin.OUT)
 
 async def blink(period_ms, times):
+    """
+    Асинхронная функция моргания светодиодом по требованию
+    """
     global counter_led
     while counter_led<times:
         LED.value(not LED.value())

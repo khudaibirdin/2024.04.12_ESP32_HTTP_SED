@@ -6,7 +6,7 @@ class RequestHandling:
     
     def get_arguments(self, request):
         """
-        GET /get?input_FREQUENCY=100&input_DUTY=200&input_DIRECTION=300 HTTP/1.1
+        Метод, который определяет из тела запроса аргументы get-запроса, формирует словарь
         """
         arguments = {}
         data_string = request[request.find("/?")+len("/?"):request.find(" HTTP/1.1")]+"&"
@@ -22,6 +22,9 @@ class RequestHandling:
     
     
     def correct_arguments(self, global_dict, new_arguments):
+        """
+        При изменении чекбоксов зануляет старые значения
+        """
         for i in self.args_to_correct:
             if i not in new_arguments:
                 global_dict[i] = ""
