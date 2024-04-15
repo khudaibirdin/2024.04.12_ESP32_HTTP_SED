@@ -1,4 +1,4 @@
-style = """
+css = """
 * {
     padding: 0;
     margin: 0;
@@ -105,14 +105,14 @@ body {
   }
 """
 
-html= f"""
+html= """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Веб-освещение</title>
-    <style>{style}</style>
+    <style>%s</style>
 </head>
 <body>
     <div class="block_head">
@@ -122,56 +122,56 @@ html= f"""
         <form method="get">
         <div>
             <p>Идентификация устройства</p>
-            <p><input type="checkbox" name="identification_auto" value="on"></p><p style="font-size: 14px;">Авто</p>
+            <p><input type="checkbox" name="identification_auto" value="checked" %s></p><p style="font-size: 14px;">Авто</p>
         </div>
         <div>
-            <p><input type="text" name="code"></p><p style="font-size: 14px;"></p>
+            <p><input type="text" name="code" value="%s"></p><p style="font-size: 14px;"></p>
             
         </div>
         <div>
             <p>Режим работы</p>
-            <p><input type="checkbox" name="regime" value="on"></p><p style="font-size: 14px;">Ежесуточно</p>
+            <p><input type="checkbox" name="regime" value="checked" %s></p><p style="font-size: 14px;">Ежесуточно</p>
         </div>
         <div>
-            <p><input type="time" name="on_time"></p>
+            <p><input type="time" name="on_time" value="checked" %s></p>
             <p style="font-size: 14px;"> Время включения</p>
         </div>
         <div>
-            <p><input type="time" name="work_period"></p>
+            <p><input type="time" name="work_period" value="checked" %s></p>
             <p style="font-size: 14px;"> Продолжительность работы</p>
         </div>
         <div>
             <!--<p><input type="range" name="brightness" step="10" min="30" max="100" value="50" style="accent-color: black;"></p>-->
-            <p><input type="number" name="brightness" step="10" min="30" max="100" value="50" style="width: 50px;"></p>
-            <p style="font-size: 14px;">Яркость (30-100%)</p>
+            <p><input type="number" name="brightness" step="10" min="30" max="100" value="%s" style="width: 50px;"></p>
+            <p style="font-size: 14px;">Яркость (30-100%%)</p>
         </div>
         <div style="justify-content: center;">
             <label class="switch">
-                <input type="checkbox" name=manual value="on">
+                <input type="checkbox" name=manual value="checked" %s>
                 <span class="slider round"></span>
             </label>
         </div>
         <div style="flex-direction: column; font-size: 14px;">
             <p>Демонстрационный режим работы</p>
             <p>
-                <input type="radio" value="1" name="demo1"/>100%, 30 c
+                <input type="radio" value="checked" name="demo1"/>100%%, 30 c
             </p>
             <p>
-                <input type="radio" value="2" name="demo2"/>100%, 30 c; 50%, 30 c; 100%, 45 c
+                <input type="radio" value="checked" name="demo2"/>100%%, 30 c; 50%%, 30 c; 100%%, 45 c
             </p>
             <p>
-                <input type="radio" value="3" name="demo3"/>100%, 20 c; 70%, 30 c
+                <input type="radio" value="checked" name="demo3"/>100%%, 20 c; 70%%, 30 c
             </p>
             <p>
-                <input type="radio" value="4" name="demo4"/>100%, 20 c; 50%, 15 c; 20% 15 c; 100%, 15c
+                <input type="radio" value="checked" name="demo4"/>100%%, 20 c; 50%%, 15 c; 20%% 15 c; 100%%, 15c
             </p>
             <p>
-                <input type="radio" value="5" name="demo5"/>100%, 30 c; 50%, 15 c
+                <input type="radio" value="checked" name="demo5"/>100%%, 30 c; 50%%, 15 c
             </p>
         </div>
         <div style="justify-content: center;">
             <label class="switch" >
-                <input type="checkbox" name=demo value="on">
+                <input type="checkbox" name=demo value="checked" %s>
                 <span class="slider round"></span>
             </label>
         </div>
