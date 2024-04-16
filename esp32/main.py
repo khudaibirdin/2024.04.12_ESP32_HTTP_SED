@@ -1,12 +1,17 @@
-from machine import reset
+import machine
+import time
 
 from micropyserver import MicroPyServer
 from user import RequestHandling, json_load, json_save
 from site import html, css
+import _thread
 
 
 def page_main(request):
-    if request.find("GET / HTTP/1.1") == -1:
+    """
+    Обработка главной страницы
+    """
+    if request.find("GET / HTTP/1.1") == -1:	# при получении get-запроса
         rh = RequestHandling(["identification_auto",
                               "regime",
                               "manual",
@@ -34,18 +39,33 @@ def page_main(request):
                        p["demo4"],
                        p["demo5"],
                        p["demo"])
-    server.send(responce)
+    serv.send(responce)
 
 
-server = MicroPyServer()
-server.add_route("/", page_main)
+def main(led, period_ms):
+    """
+    Поток для основных задач, логики приложения
+    """
+    while True:
+        led.on()
+        time.sleep_ms(5)
+        led.off()
+        time.sleep_ms(period_ms)
 
 
-def main():
-    server.start()
+def server():
+    """
+    Поток для работы сервера, для взаимодействия ч-з браузер
+    """
+    serv.start()
 
+
+led = machine.Pin(12, Pin.OUT)
+serv = MicroPyServer()
+serv.add_route("/", page_main)
 
 try:
-    main()
+    _thread.start_new_thread(main, (led, 500))
+    server()
 except:
     machine.reset()
