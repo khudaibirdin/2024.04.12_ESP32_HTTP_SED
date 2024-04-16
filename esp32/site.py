@@ -154,19 +154,19 @@ html= """
         <div style="flex-direction: column; font-size: 14px;">
             <p>Демонстрационный режим работы</p>
             <p>
-                <input type="radio" value="checked" name="demo1"/>100%%, 30 c
+                <input type="radio" value="1" %s name="demo_type"/>100%%, 30 c
             </p>
             <p>
-                <input type="radio" value="checked" name="demo2"/>100%%, 30 c; 50%%, 30 c; 100%%, 45 c
+                <input type="radio" value="2" %s name="demo_type"/>100%%, 30 c; 50%%, 30 c; 100%%, 45 c
             </p>
             <p>
-                <input type="radio" value="checked" name="demo3"/>100%%, 20 c; 70%%, 30 c
+                <input type="radio" value="3" %s name="demo_type"/>100%%, 20 c; 70%%, 30 c
             </p>
             <p>
-                <input type="radio" value="checked" name="demo4"/>100%%, 20 c; 50%%, 15 c; 20%% 15 c; 100%%, 15c
+                <input type="radio" value="4" %s name="demo_type"/>100%%, 20 c; 50%%, 15 c; 20%% 15 c; 100%%, 15c
             </p>
             <p>
-                <input type="radio" value="checked" name="demo5"/>100%%, 30 c; 50%%, 15 c
+                <input type="radio" value="5" %s name="demo_type"/>100%%, 30 c; 50%%, 15 c
             </p>
         </div>
         <div style="justify-content: center;">
@@ -176,7 +176,7 @@ html= """
             </label>
         </div>
         <div style="justify-content: center;">
-            <p><button type="submit" name="confirm" style="height: 30px; font-size: 14px; color: white; background-color: black; padding: 4px; border: 0px; border-radius: 5px;">Обновить</button></p>
+            <p><button type="submit" name="confirm" style="height: 40px; width: 150px; font-size: 14px; color: white; background-color: black; padding: 4px; border: 0px; border-radius: 5px;">Обновить</button></p>
         </div>
         </form>
     </div>
