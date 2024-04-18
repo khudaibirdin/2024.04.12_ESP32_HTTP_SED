@@ -69,3 +69,5 @@ try:
     server()
 except:
     machine.reset()
+
+#TODO добавить взаимодействие переменных между потоками
